@@ -21,12 +21,16 @@ public class EditerCollaborateurController extends HttpServlet {
 		
 		if (matricule == null) {
 			
+			resp.setStatus(400);
+			
 			resp.getWriter().write("<h1>400</h1><br><br>un matricule est attendu<br><br>");
 			
 			resp.getWriter().write("<a href=\"http://localhost:8080/sgp/collaborateurs/editer?matricule=M01&titre=Mr&nom=Robert&prenom=Alain\">tester avec un matricule connu</a>");
 			
 		}
 		else if (matricule != null) {
+			
+			resp.setStatus(201);
 			
 			resp.getWriter().write("<h1>200</h1><br><br>");
 			resp.getWriter().write("<ul>");
